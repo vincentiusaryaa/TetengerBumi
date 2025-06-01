@@ -98,9 +98,16 @@
                         <div class="self-stretch justify-start text-black text-lg font-bold leading-loose">Lorem ipsum dolor sit amet</div>
                         <div class="self-stretch justify-start text-justify text-black text-md font-reguler leading-7">Integer congue eget enim in sollicitudin. Cras porttitor malesuada erat eu tempor. Sed cursus ipsum quis ante imperdiet, et volutpat risus pulvinar. Donec lobortis viverra imperdiet. Integer eu purus suscipit, tincidunt augue non, feugiat diam. Mauris tortor dolor, varius eget nibh et, elementum placerat felis. In luctus urna vel neque aliquet semper. Nunc non leo lacinia, dictum metus eu, vestibulum enim. Nam luctus arcu erat, ac ultricies mauris efficitur non. Vivamus nec sapien nec enim consequat sollicitudin vel non mauris. Aenean nec faucibus ipsum, in tristique massa. Phasellus eu ipsum vitae erat dignissim suscipit. Aenean ac interdum turpis, eget semper nunc. Praesent finibus dolor ex, non porttitor neque elementum at.</div>
                         <!-- Tombol -->
-                        <div class="self-stretch px-121 py-4 bg-[#65A30D] mt-8 rounded-2xl flex items-center">
-                            <span class="text-white text-sm font-bold leading-tight">Gabung Program Kerja</span>
-                        </div>
+                        <template v-if="user">
+                            <a href="https://forms.gle/vWBb24wftTZguxdo8" target="_blank" class="self-stretch px-121 py-4 bg-[#65A30D] mt-8 rounded-2xl flex items-center justify-center cursor-pointer hover:bg-[#5D8736] transition-colors duration-300">
+                                <span class="text-white text-sm font-bold leading-tight">Gabung Program Kerja</span>
+                            </a>
+                        </template>
+                        <template v-else>
+                            <Link href="/login" class="self-stretch px-121 py-4 bg-[#65A30D] mt-8 rounded-2xl flex items-center justify-center cursor-pointer hover:bg-[#5D8736] transition-colors duration-300">
+                                <span class="text-white text-sm font-bold leading-tight">Gabung Program Kerja</span>
+                            </Link>
+                        </template>
                     </div>
             </section>
         </div> 

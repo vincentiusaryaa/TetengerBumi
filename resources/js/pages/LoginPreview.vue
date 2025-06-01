@@ -154,7 +154,7 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import { ref } from 'vue';
-import InputError from '@/components/InputError.vue';
+import InputError from '@/components/InputError.vue'; // Path diubah ke lowercase
 
 const props = defineProps({
     canResetPassword: {
