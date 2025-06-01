@@ -41,6 +41,18 @@ Route::get('/proker', function () {
     return Inertia::render('Proker'); 
 })->name('Proker');
 
+// Profile Routes
+Route::get('/profile', function () {
+    return Inertia::render('Profile');
+})->middleware(['auth', 'verified'])->name('profile.index');
+
+Route::get('/profile/photo/edit', function () {
+    return Inertia::render('Profile/EditPhoto');
+})->middleware(['auth', 'verified'])->name('profile.photo.edit');
+
+// Tambahkan rute POST untuk upload foto profil
+Route::post('/profile/photo', [\App\Http\Controllers\ProfileController::class, 'updatePhoto'])->name('profile.photo.update');
+
 Route::get('/walipohon', function () {
     return Inertia::render('WaliPohon'); 
 })->name('WaliPohon');

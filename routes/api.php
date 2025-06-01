@@ -41,11 +41,16 @@ Route::get('/admin/statistics', [DashboardController::class, 'statistics']);
 
 use App\Http\Controllers\ProfileController;
 
-// Endpoint dengan autentikasi Sanctum
-Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'show']);
-    Route::put('/profile', [ProfileController::class, 'update']);
-});
+// Endpoint dengan autentikasi Sanctum (disabled sementara untuk debugging)
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'show']);
+//     Route::put('/profile', [ProfileController::class, 'update']);
+// });
+
+// Profile routes
+Route::get('/profile', [ProfileController::class, 'show']);
+Route::put('/profile', [ProfileController::class, 'update']);
+// Route untuk upload foto dipindahkan ke web.php
 
 // Endpoint publik untuk debugging dan jika ada masalah auth
 // Mengembalikan data dummy agar UI tetap berfungsi

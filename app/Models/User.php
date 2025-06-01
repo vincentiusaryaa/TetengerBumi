@@ -20,8 +20,15 @@ class User extends Authenticatable
 
     public function getProfilePhotoUrlAttribute()
     {
-        return $this->profile_photo
-            ? asset('storage/profile_photos/' . $this->profile_photo)
-            : asset('images/default-profile.png');
+        if (empty($this->profile_photo)) {
+            return asset('images/default-avatar.png');
+        }
+        
+        // Jika path sudah berisi 'profile_photos/', tidak perlu menambahkannya lagi
+        if (strpos($this->profile_photo, 'profile_photos/') === 0) {
+            return asset('storage/' . $this->profile_photo);
+        }
+        
+        return asset('storage/profile_photos/' . $this->profile_photo);
     }
 }

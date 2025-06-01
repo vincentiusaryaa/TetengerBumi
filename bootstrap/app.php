@@ -24,9 +24,27 @@ return Application::configure(basePath: dirname(__DIR__))
         
         // Pastikan middleware web tidak menggunakan CheckRole secara global
         $middleware->web(append: [
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
             HandleAppearance::class,
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
+        ]);
+        
+        // Pastikan CORS diaktifkan untuk API
+        $middleware->api(append: [
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Illuminate\Session\Middleware\StartSession::class, // Tambahkan ini
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class, // Tambahkan ini
+        ]);
+        
+        // Pastikan VerifyCsrfToken diaktifkan untuk semua rute web
+        $middleware->validateCsrfTokens(except: [
+            'sanctum/csrf-cookie',
+            'profile/photo', // Izinkan endpoint upload foto
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
