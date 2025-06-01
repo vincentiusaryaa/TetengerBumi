@@ -7,18 +7,23 @@
                 <img src="images/tb2.png" alt="Logo" class="h-[42px] w-[134px]" />
             </div>
             <div class="flex items-center space-x-6">
-                <a href="/landingpage" class="text-sm font-medium text-gray-700 hover:text-black">Beranda</a>
-                <a href="/proker" class="text-sm font-medium text-gray-700 hover:text-black">Program Kerja</a>
-                <a href="/lokasi" class="text-sm font-medium text-gray-700 hover:text-black">Lokasi Tanam</a>
-                <a href="/donasi" class="text-sm font-medium text-gray-700 hover:text-black">Donasi</a>
-                <a href="/aboutus" class="text-sm font-medium text-gray-700 hover:text-black">Tentang Kami</a>
+                <Link :href="user ? '/home' : '/landingpage'" class="text-sm font-medium text-gray-700 hover:text-black">Beranda</Link>
+                <Link href="/proker" class="text-sm font-medium text-gray-700 hover:text-black">Program Kerja</Link>
+                <Link href="/lokasi" class="text-sm font-medium text-gray-700 hover:text-black">Lokasi Tanam</Link>
+                <Link href="/donasi" class="text-sm font-medium text-gray-700 hover:text-black">Donasi</Link>
+                <Link href="/aboutus" class="text-sm font-medium text-gray-700 hover:text-black">Tentang Kami</Link>
             </div>
 
-            <!-- Kanan -->
+            <!-- Kanan: Login/Profile -->
             <div class="flex">
-                <Link href="/login" class="text-white bg-[#84CC16] hover:bg-[#5D8736] rounded-[30px] text-sm px-5 py-2 text-center font-semibold transition-all duration-300">
-                    Masuk / Daftar
-                </Link>
+                <template v-if="user">
+                    <ProfileDropdown :user="user" />
+                </template>
+                <template v-else>
+                    <Link href="/login" class="text-white bg-[#84CC16] hover:bg-[#5D8736] rounded-[30px] text-sm px-5 py-2 text-center font-semibold transition-all duration-300">
+                        Masuk / Daftar
+                    </Link>
+                </template>
             </div>
         </nav>
 
@@ -179,5 +184,10 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
+import ProfileDropdown from '@/components/ProfileDropdown.vue';
+
+const page = usePage();
+const auth = page.props.auth || {};
+const user = auth.user || null;
 </script>

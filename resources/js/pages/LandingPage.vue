@@ -48,7 +48,7 @@
                     <!-- Tombol -->
                     <div class="flex justify-center items-center gap-4">
                         <Link href="/register" class="px-5 py-3.5 rounded-3xl border border-white text-white text-sm font-bold hover:bg-white hover:text-lime-600 transition">
-                            Daftar Wali Pohon
+                            Bergabung Sekarang
                         </Link>
                         <Link href="/donasi" class="pl-6 pr-5 py-3.5 bg-white border border-lime-100 text-lime-600 text-sm font-bold rounded-3xl hover:bg-lime-600 hover:text-white transition">
                             Donasi Sekarang

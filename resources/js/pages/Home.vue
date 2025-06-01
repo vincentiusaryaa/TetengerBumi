@@ -26,13 +26,13 @@
 
                     <!-- Tombol -->
                     <div class="flex justify-center items-center gap-4">
-                        <button class="px-5 py-3.5 rounded-3xl border border-white text-white text-sm font-bold">
-                        Daftar Wali Pohon
-                        </button>
-                        <button class="pl-6 pr-5 py-3.5 bg-white border border-lime-100 text-lime-600 text-sm font-bold rounded-3xl">
-    Donasi Sekarang
-</button>
-        </div>
+                        <a href="https://forms.gle/vWBb24wftTZguxdo8" target="_blank" class="px-5 py-3.5 rounded-3xl border border-white text-white text-sm font-bold hover:bg-white/10 transition duration-300">
+                            Daftar sebagai Relawan
+                        </a>
+                        <Link href="/donasi" class="pl-6 pr-5 py-3.5 bg-white border border-lime-100 text-lime-600 text-sm font-bold rounded-3xl hover:bg-lime-50 transition duration-300">
+                            Donasi Sekarang
+                        </Link>
+                    </div>
       </div>
     </div>
   </div>
@@ -149,106 +149,84 @@
                 
                 <!-- Kartu Lokasi -->
                 <div class="flex justify-center items-center gap-5 mt-8">
-                    <div class="w-96 h-[480px] relative bg-Background-Body rounded-[30px] shadow-[0px_6px_12px_0px_rgba(0,0,0,0.03)] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
-                        <div class="w-80 left-[21.67px] top-[25px] absolute inline-flex flex-col justify-start items-center gap-7">
-                            <div class="w-80 h-52 relative rounded-[20px] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
-                                <img class="w-80 h-52 left-0 top-0 absolute" src="/images/image4.png" />
-                            </div>
-                            <div class="w-72 flex flex-col justify-start items-center gap-11">
-                                <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
-                                    <div class="self-stretch justify-start text-Text-Title-Color text-md font-bold leading-loose">Amazon Reforestation Project</div>
-                                    <div class="w-40 flex flex-col justify-start items-center gap-2">
-                                        <div class="px-5 py-0.5 bg-[#ECFCCB] rounded-3xl inline-flex justify-center items-center gap-2.5">
-                                            <div class="justify-start text-[#65A30D] text-sm font-semibold leading-tight">59 Donatur</div>
-                                        </div>
-                                        <div class="self-stretch inline-flex justify-start items-center gap-2">
-                                            <div class="p-[5px] bg-Colors-Lime-100 rounded-[20px] flex justify-start items-center gap-2.5">
-                                                <div class="w-3 h-3 relative">
-                                                    <div class="w-2 h-2.5 left-[1.56px] top-[0.88px] absolute bg-Text-Brand-Color"></div>
-                                                    <div class="w-3 h-3 left-0 top-0 absolute opacity-0"></div>
-                                                    <div class="w-3 h-3 left-[12px] top-[12px] absolute origin-top-left -rotate-180 opacity-0">
-                                                        <img src="/images/location.png" alt="location"></img>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="justify-start text-[#6B7280] text-sm font-semibold leading-tight">Malang, Jawa Timur</div>
-                                        </div>
-                                    </div>
+                    <!-- Card 1 -->
+                    <div class="w-96 bg-white rounded-3xl shadow-md p-4 flex flex-col overflow-hidden border border-gray-100">
+                        <div class="w-full rounded-2xl overflow-hidden mb-4">
+                            <img class="w-full h-52 object-cover" src="/images/image4.png" />
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-gray-800 font-bold text-lg mb-3 text-center">Rehabilitasi Hutan Mangrove</h3>
+                            
+                            <div class="flex flex-col items-center gap-2 mb-6">
+                                <div class="px-4 py-1 bg-[#ECFCCB] rounded-full">
+                                    <span class="text-[#65A30D] text-sm font-semibold">83 Donatur</span>
                                 </div>
-                                <div class="group px-16 py-4 bg-white hover:bg-[#65A30D] rounded-2xl outline outline-2 outline-[#65A30D] flex flex-col justify-center items-center gap-0.5 transition-all duration-200 cursor-pointer">
-                                    <div class="inline-flex justify-center items-end gap-1.5">
-                                        <div class="text-[#65A30D] group-hover:text-white text-sm font-bold leading-tight transition-all duration-200">Donasi</div>
+                                
+                                <div class="flex items-center gap-2">
+                                    <div class="p-1 bg-[#ECFCCB] rounded-full">
+                                        <img src="/images/location.png" alt="location" class="w-3 h-3" />
                                     </div>
+                                    <span class="text-gray-600 text-sm">Bali, Indonesia</span>
                                 </div>
                             </div>
+                            
+                            <Link href="/donasi" class="w-full py-3 bg-white border-2 border-[#65A30D] text-[#65A30D] hover:bg-[#65A30D] hover:text-white rounded-xl font-bold text-center transition duration-300">
+                                Donasi
+                            </Link>
                         </div>
                     </div>
-                    <div class="w-96 self-stretch relative bg-Background-Body rounded-[30px] shadow-[0px_10px_70px_0px_rgba(0,0,0,0.08)] outline outline-2 outline-offset-[-2px] outline-Text-Brand-Color overflow-hidden">
-                        <div class="w-80 left-[29.33px] top-[30px] absolute inline-flex flex-col justify-start items-center gap-7">
-                            <div class="self-stretch h-52 relative rounded-[20px] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
-                                <img class="w-80 h-52 left-0 top-0 absolute" src="/images/image4.png" />
-                            </div>
-                            <div class="w-72 flex flex-col justify-start items-center gap-11">
-                                <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
-                                    <div class="self-stretch justify-start text-Text-Title-Color text-md font-bold leading-loose">Amazon Reforestation Project</div>
-                                    <div class="w-40 flex flex-col justify-start items-center gap-2">
-                                        <div class="px-5 py-0.5 bg-[#ECFCCB] rounded-3xl inline-flex justify-center items-center gap-2.5">
-                                            <div class="justify-start text-[#65A30D] text-sm font-semibold leading-tight">59 Donatur</div>
-                                        </div>
-                                        <div class="self-stretch inline-flex justify-start items-center gap-2">
-                                            <div class="p-[5px] bg-Colors-Lime-100 rounded-[20px] flex justify-start items-center gap-2.5">
-                                                <div class="w-3 h-3 relative">
-                                                    <div class="w-2 h-2.5 left-[1.56px] top-[0.88px] absolute bg-Text-Brand-Color"></div>
-                                                    <div class="w-3 h-3 left-0 top-0 absolute opacity-0"></div>
-                                                    <div class="w-3 h-3 left-[12px] top-[12px] absolute origin-top-left -rotate-180 opacity-0">
-                                                        <img src="/images/location.png" alt="location"></img>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="justify-start text-[#6B7280] text-sm font-semibold leading-tight">Malang, Jawa Timur</div>
-                                        </div>
-                                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="w-96 bg-white rounded-3xl shadow-md p-4 flex flex-col overflow-hidden border-2 border-[#65A30D]">
+                        <div class="w-full rounded-2xl overflow-hidden mb-4">
+                            <img class="w-full h-52 object-cover" src="/images/image4.png" />
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-gray-800 font-bold text-lg mb-3 text-center">Reboisasi Taman Nasional Bromo</h3>
+                            
+                            <div class="flex flex-col items-center gap-2 mb-6">
+                                <div class="px-4 py-1 bg-[#ECFCCB] rounded-full">
+                                    <span class="text-[#65A30D] text-sm font-semibold">142 Donatur</span>
                                 </div>
-                                <div class="group px-16 py-4 bg-white hover:bg-[#65A30D] rounded-2xl outline outline-2 outline-[#65A30D] flex flex-col justify-center items-center gap-0.5 transition-all duration-200 cursor-pointer">
-                                    <div class="inline-flex justify-center items-end gap-1.5">
-                                        <div class="text-[#65A30D] group-hover:text-white text-sm font-bold leading-tight transition-all duration-200">Donasi</div>
+                                
+                                <div class="flex items-center gap-2">
+                                    <div class="p-1 bg-[#ECFCCB] rounded-full">
+                                        <img src="/images/location.png" alt="location" class="w-3 h-3" />
                                     </div>
+                                    <span class="text-gray-600 text-sm">Probolinggo, Jawa Timur</span>
                                 </div>
                             </div>
+                            
+                            <Link href="/donasi" class="w-full py-3 bg-white border-2 border-[#65A30D] text-[#65A30D] hover:bg-[#65A30D] hover:text-white rounded-xl font-bold text-center transition duration-300">
+                                Donasi
+                            </Link>
                         </div>
                     </div>
-                    <div class="w-96 h-[480px] relative bg-Background-Body rounded-[30px] shadow-[0px_6px_12px_0px_rgba(0,0,0,0.03)] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
-                        <div class="w-80 left-[21.67px] top-[25px] absolute inline-flex flex-col justify-start items-center gap-7">
-                            <div class="w-80 h-52 relative rounded-[20px] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
-                                <img class="w-80 h-52 left-0 top-0 absolute" src="/images/image4.png" />
-                            </div>
-                            <div class="w-72 flex flex-col justify-start items-center gap-11">
-                                <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
-                                    <div class="self-stretch justify-start text-Text-Title-Color text-md font-bold leading-loose">Amazon Reforestation Project</div>
-                                    <div class="w-40 flex flex-col justify-start items-center gap-2">
-                                        <div class="px-5 py-0.5 bg-[#ECFCCB] rounded-3xl inline-flex justify-center items-center gap-2.5">
-                                            <div class="justify-start text-[#65A30D] text-sm font-semibold leading-tight">59 Donatur</div>
-                                        </div>
-                                        <div class="self-stretch inline-flex justify-start items-center gap-2">
-                                            <div class="p-[5px] bg-Colors-Lime-100 rounded-[20px] flex justify-start items-center gap-2.5">
-                                                <div class="w-3 h-3 relative">
-                                                    <div class="w-2 h-2.5 left-[1.56px] top-[0.88px] absolute bg-Text-Brand-Color"></div>
-                                                    <div class="w-3 h-3 left-0 top-0 absolute opacity-0"></div>
-                                                    <div class="w-3 h-3 left-[12px] top-[12px] absolute origin-top-left -rotate-180 opacity-0">
-                                                        <img src="/images/location.png" alt="location"></img>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="justify-start text-[#6B7280] text-sm font-semibold leading-tight">Malang, Jawa Timur</div>
-                                        </div>
-                                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="w-96 bg-white rounded-3xl shadow-md p-4 flex flex-col overflow-hidden border border-gray-100">
+                        <div class="w-full rounded-2xl overflow-hidden mb-4">
+                            <img class="w-full h-52 object-cover" src="/images/image4.png" />
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-gray-800 font-bold text-lg mb-3 text-center">Konservasi Hutan Kalimantan</h3>
+                            
+                            <div class="flex flex-col items-center gap-2 mb-6">
+                                <div class="px-4 py-1 bg-[#ECFCCB] rounded-full">
+                                    <span class="text-[#65A30D] text-sm font-semibold">67 Donatur</span>
                                 </div>
-                                <div class="group px-16 py-4 bg-white hover:bg-[#65A30D] rounded-2xl outline outline-2 outline-[#65A30D] flex flex-col justify-center items-center gap-0.5 transition-all duration-200 cursor-pointer">
-                                    <div class="inline-flex justify-center items-end gap-1.5">
-                                        <div class="text-[#65A30D] group-hover:text-white text-sm font-bold leading-tight transition-all duration-200">Donasi</div>
+                                
+                                <div class="flex items-center gap-2">
+                                    <div class="p-1 bg-[#ECFCCB] rounded-full">
+                                        <img src="/images/location.png" alt="location" class="w-3 h-3" />
                                     </div>
+                                    <span class="text-gray-600 text-sm">Samarinda, Kalimantan Timur</span>
                                 </div>
                             </div>
+                            
+                            <Link href="/donasi" class="w-full py-3 bg-white border-2 border-[#65A30D] text-[#65A30D] hover:bg-[#65A30D] hover:text-white rounded-xl font-bold text-center transition duration-300">
+                                Donasi
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -326,6 +304,7 @@
 
 <script setup>
 import { usePage } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 import AppLayout from '@/layouts/AppLayout.vue';
 import Container from '@/components/Container.vue';
 import FooterComponent from '@/components/Footer.vue';

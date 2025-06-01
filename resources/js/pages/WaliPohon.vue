@@ -1,7 +1,32 @@
 <template>
 <div class="relative bg-[#f3f3f3]">
+    <!-- Navbar -->
+    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 w-[1220px] h-[80px] rounded-[57px] bg-white flex items-center justify-between px-6 shadow-md z-50">
+        <!-- Kiri: Logo  -->
+        <div class="flex items-center space-x-4">
+            <img src="images/tb2.png" alt="Logo" class="h-[42px] w-[134px]" />
+        </div>
+        <div class="flex items-center space-x-6">
+            <Link :href="user ? '/home' : '/landingpage'" class="text-sm font-medium text-gray-700 hover:text-black">Beranda</Link>
+            <Link href="/proker" class="text-sm font-medium text-gray-700 hover:text-black">Program Kerja</Link>
+            <Link href="/lokasi" class="text-sm font-medium text-gray-700 hover:text-black">Lokasi Tanam</Link>
+            <Link href="/donasi" class="text-sm font-medium text-gray-700 hover:text-black">Donasi</Link>
+            <Link href="/aboutus" class="text-sm font-medium text-gray-700 hover:text-black">Tentang Kami</Link>
+        </div>
 
-
+        <!-- Kanan: Login/Profile -->
+        <div class="flex">
+            <template v-if="user">
+                <ProfileDropdown :user="user" />
+            </template>
+            <template v-else>
+                <Link href="/login" class="text-white bg-[#84CC16] hover:bg-[#5D8736] rounded-[30px] text-sm px-5 py-2 text-center font-semibold transition-all duration-300">
+                    Masuk / Daftar
+                </Link>
+            </template>
+        </div>
+    </nav>
+    
     <section class="relative w-full">
         <!-- Background Image -->
     <div class="w-full px-24 pt-40 relative bg-Background-Body inline-flex flex-col justify-start items-center gap-14">
@@ -159,5 +184,10 @@
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/vue3';
+import { Link, usePage } from '@inertiajs/vue3';
+import ProfileDropdown from '@/components/ProfileDropdown.vue';
+
+const page = usePage();
+const auth = page.props.auth || {};
+const user = auth.user || null;
 </script>
