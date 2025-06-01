@@ -18,6 +18,49 @@
         <!-- Konten Card -->
         <div class="relative max-w-screen-xl mx-auto bg-white rounded-[60px] shadow-xl p-10 md:p-20 mb-4 mt-60">
             <section class="flex justify-center gap-6 mb-24 flex-wrap">
+                <!-- Kartu Lokasi Dinamis -->
+                <div v-for="location in locations" :key="location.id" class="w-80 rounded-[20px] border border-gray-200 bg-white hover:shadow-[0px_10px_70px_0px_rgba(0,0,0,0.08)] transition-all duration-300">
+                    <!-- Gambar -->
+                    <img :src="location.image" :alt="location.name" class="w-full h-52 object-cover rounded-t-[20px]" />
+
+                    <!-- Konten -->
+                    <div class="p-5 flex flex-col gap-3">
+                        <!-- Judul -->
+                        <h3 class="text-center text-[#1F2937] text-lg font-bold">{{ location.name }}</h3>
+
+                        <!-- Dana terkumpul -->
+                        <div>
+                        <div class="flex justify-between text-sm font-medium text-[#6B7280] mb-1">
+                            <span>Dana Terkumpul</span>
+                            <span class="text-[#65A30D]">IDR {{ formatCurrency(location.fundedAmount) }}</span>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#65A30D]" :style="{ width: `${location.fundingPercentage}%` }"></div>
+                        </div>
+
+                        <p class="text-sm text-[#6B7280] font-medium mt-1">
+                            {{ location.fundingPercentage }}% dari IDR {{ formatCurrency(location.fundingGoal) }} Goals
+                        </p>
+                        </div>
+
+                        <!-- Button & Relawan -->
+                        <div class="flex justify-between items-center mt-3">
+                        <!-- Tombol -->
+                        <Link :href="`/lokasi/${location.id}`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
+                            Detail
+                        </Link>
+
+                        <!-- Badge Relawan -->
+                        <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
+                            <img src="/images/profile-2.svg" alt="Relawan" class="w-5 h-5" />
+                            <span>{{ location.volunteers }}</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Card 3 -->
                 <div class="w-80 rounded-[20px] border border-gray-200 bg-white hover:shadow-[0px_10px_70px_0px_rgba(0,0,0,0.08)] transition-all duration-300">
                     <!-- Gambar -->
@@ -48,9 +91,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -91,9 +134,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -134,52 +177,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
-
-                        <!-- Badge Relawan -->
-                        <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
-                            <img src="/images/profile-2.svg" alt="Relawan" class="w-5 h-5" />
-                            <span>68</span>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-                <!-- Card 3 -->
-                <div class="w-80 rounded-[20px] border border-gray-200 bg-white hover:shadow-[0px_10px_70px_0px_rgba(0,0,0,0.08)] transition-all duration-300">
-                    <!-- Gambar -->
-                    <img src="/images/image4.png" alt="Lokasi Tanam" class="w-full h-52 object-cover rounded-t-[20px]" />
-
-                    <!-- Konten -->
-                    <div class="p-5 flex flex-col gap-3">
-                        <!-- Judul -->
-                        <h3 class="text-center text-[#1F2937] text-lg font-bold">Bukit Pudjon</h3>
-
-                        <!-- Dana terkumpul -->
-                        <div>
-                        <div class="flex justify-between text-sm font-medium text-[#6B7280] mb-1">
-                            <span>Dana Terkumpul</span>
-                            <span class="text-[#65A30D]">IDR 86,000,000</span>
-                        </div>
-
-                        <!-- Progress Bar -->
-                        <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                            <div class="h-full bg-[#65A30D]" style="width: 86%"></div>
-                        </div>
-
-                        <p class="text-sm text-[#6B7280] font-medium mt-1">
-                            86% dari IDR 100,000,000 Goals
-                        </p>
-                        </div>
-
-                        <!-- Button & Relawan -->
-                        <div class="flex justify-between items-center mt-3">
-                        <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
-                            Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -220,9 +220,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -263,9 +263,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -306,9 +306,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -349,9 +349,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -392,9 +392,9 @@
                         <!-- Button & Relawan -->
                         <div class="flex justify-between items-center mt-3">
                         <!-- Tombol -->
-                        <button class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300">
+                        <Link :href="`/lokasi/1`" class="w-[206px] h-[52px] bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold text-base rounded-full transition duration-300 flex items-center justify-center">
                             Detail
-                        </button>
+                        </Link>
 
                         <!-- Badge Relawan -->
                         <div class="flex items-center gap-1 px-3 py-1 bg-[#F0FDF4] rounded-full text-[#65A30D] font-medium">
@@ -488,7 +488,44 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 import AppLayout from '@/layouts/AppLayout.vue';
 import { Link } from '@inertiajs/vue3';
+
+// Data lokasi dinamis
+const locations = ref([
+  {
+    id: 1,
+    name: 'Hutan Konservasi Bukit Pudjon',
+    fundedAmount: 86000000,
+    fundingGoal: 100000000,
+    fundingPercentage: 86,
+    volunteers: 68,
+    image: '/images/image4.png'
+  },
+  {
+    id: 2,
+    name: 'Kawasan Hutan Gunung Arjuno',
+    fundedAmount: 45000000,
+    fundingGoal: 75000000,
+    fundingPercentage: 60,
+    volunteers: 42,
+    image: '/images/image4.png'
+  },
+  {
+    id: 3,
+    name: 'Area Konservasi Mangrove Ujung Pangkah',
+    fundedAmount: 32000000,
+    fundingGoal: 50000000,
+    fundingPercentage: 64,
+    volunteers: 37,
+    image: '/images/image4.png'
+  }
+]);
+
+// Format mata uang ke format Indonesia
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat('id-ID').format(value);
+};
 </script>

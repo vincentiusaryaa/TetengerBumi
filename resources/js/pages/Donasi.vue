@@ -17,6 +17,16 @@
             <div class="w-[600px] flex flex-col gap-6">
                 <h1 class="text-white text-6xl font-bold leading-tight">Preserve Nature Protect Future</h1>
                 <p class="text-white text-xl font-medium">Donasi Anda Sangat Berharga Untuk Keberlangsungan Pohon Saat Ini!</p>
+                
+                <!-- Tombol Aksi -->
+                <div class="flex gap-4 mt-4">
+                    <Link href="/daftar-donatur" class="px-6 py-3 bg-white hover:bg-gray-100 text-[#65A30D] font-semibold rounded-full transition duration-300 inline-flex items-center justify-center shadow-lg">
+                        Lihat Daftar Donatur
+                    </Link>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSean1zRWfVSkl-VWQ3lnPphyefj1ojiDcnj8gwVXD3Bci6dYA/viewform?usp=dialog" target="_blank" class="px-6 py-3 bg-[#84CC16] hover:bg-[#65A30D] text-white font-semibold rounded-full transition duration-300 inline-flex items-center justify-center shadow-lg">
+                        Kirim Bukti Transfer
+                    </a>
+                </div>
             </div>
 
             <!-- Kanan: Gambar QRIS -->
@@ -106,5 +116,6 @@
 
 <script setup>
 import { usePage } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 import AppLayout from '@/layouts/AppLayout.vue';
 </script>

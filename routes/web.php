@@ -33,9 +33,17 @@ Route::get('/lokasi', function () {
     return Inertia::render('Lokasi'); 
 })->name('Lokasi');
 
+Route::get('/lokasi/{id}', function ($id) {
+    return Inertia::render('Lokasi/Detail', ['id' => $id]);
+})->name('lokasi.detail');
+
 Route::get('/donasi', function () {
     return Inertia::render('Donasi'); 
 })->name('Donasi');
+
+Route::get('/daftar-donatur', function () {
+    return Inertia::render('DaftarDonatur'); 
+})->name('DaftarDonatur');
 
 Route::get('/proker', function () {
     return Inertia::render('Proker'); 
