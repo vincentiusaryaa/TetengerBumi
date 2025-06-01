@@ -137,8 +137,18 @@
 
 
             <!-- Lokasi Tanam -->
-            <div class="self-stretch h-[760px] relative overflow-hidden">
-                <div class="w-[1248px] h-[500px] left-0 top-[198px] absolute inline-flex justify-center items-center gap-5">
+            <div class="self-stretch py-16 flex flex-col items-center">
+                <!-- Judul dan Deskripsi -->
+                <div class="text-center max-w-3xl mb-12">
+                    <p class="text-[#65A30D] text-md font-bold mb-1">TANAM</p>
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Lokasi Terbaru</h2>
+                    <p class="text-gray-500 text-md font-medium max-w-[750px] mx-auto">
+                        Kegiatan ini bertujuan untuk mendukung program "Penanaman Satu Milyar Pohon" serta sebagai bentuk kepedulian terhadap kelestarian alam dan lingkungan.
+                    </p>
+                </div>
+                
+                <!-- Kartu Lokasi -->
+                <div class="flex justify-center items-center gap-5 mt-8">
                     <div class="w-96 h-[480px] relative bg-Background-Body rounded-[30px] shadow-[0px_6px_12px_0px_rgba(0,0,0,0.03)] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
                         <div class="w-80 left-[21.67px] top-[25px] absolute inline-flex flex-col justify-start items-center gap-7">
                             <div class="w-80 h-52 relative rounded-[20px] outline outline-1 outline-offset-[-1px] outline-Border-Border-Color overflow-hidden">
@@ -241,13 +251,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="w-[1248px] left-0 top-[30px] absolute inline-flex flex-col justify-start items-center gap-2.5">
-                    <div class="self-stretch flex flex-col justify-start items-start">
-                        <div class="self-stretch h-7 text-center justify-start text-[#65A30D] text-md font-bold leading-7">TANAM</div>
-                        <div class="self-stretch text-center justify-start text-[#1F2937] text-4xl font-bold leading-10">Lokasi Terbaru</div>
-                    </div>
-                    <div class="w-[750px] text-center justify-start text-[#6B7280] text-md font-medium leading-7">Kegiatan ini bertujuan untuk mendukung program "Penanaman Satu Milyar Pohon" serta sebagai bentuk kepedulian terhadap kelestarian alam dan lingkungan.</div>
                 </div>
             </div>
 
